@@ -9,25 +9,14 @@ using namespace std;
 
 int main() {
     
-    string noun = "";
-    string pluralNoun = "";
-    string noun2 = "";
-    string place = "";
-    string adjective = "";
-    string noun3 = "";
+    string noun = "James";
+    string pluralNoun = "tables";
+    string noun2 = "bacon";
+    string place = "Bahamas";
+    string adjective = "great";
+    string noun3 = "dog";
     
-    cout<<"Please enter a noun: ";
-    cin>>noun;
-    cout<<"Please enter a plural noun: ";
-    cin>>pluralNoun;
-    cout<<"Please enter another noun: ";
-    cin>>noun2;
-    cout<<"Please enter a place: ";
-    cin>>place;
-    cout<<"Please enter an adjective: ";
-    cin>>adjective;
-    cout<<"Please enter another noun: ";
-    cin>>noun3;
+
     
     cout<<"Be kind to your " << noun << "-footed " << pluralNoun;
     cout<<" For a duck may be somebody's " << noun2 << ", ";
