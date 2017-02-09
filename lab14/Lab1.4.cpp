@@ -1,6 +1,6 @@
 //James Floretta
 //Coinstar machine
-
+//Date: 2/7/2017
 #include <iostream>
 using namespace std;
 
@@ -30,7 +30,7 @@ int main() {
    
    cout<<"After the fee, you take home " << "$" << (total - int(0.109 * total)) / 100<< "."; //What you're left with after the fee
    
-   
+
    
    
    
