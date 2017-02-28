@@ -28,7 +28,7 @@ int randomNumber;
 void randomNum(int minimum, int maximum, int& firstSwapValue, int& secondSwapValue) {
     swapNum (minimum, maximum, firstSwapValue, secondSwapValue);
     srand(time(0));
-    randomNumber = rand() % firstSwapValue + secondSwapValue;
+    randomNumber = rand() % (maximum - minimum) + minimum;
     
     cout<<"Your random value is: " << randomNumber;
     
