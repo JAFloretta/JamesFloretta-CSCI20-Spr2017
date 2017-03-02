@@ -23,9 +23,10 @@ void swapNum (int minimum, int maximum, int& firstSwapValue, int& secondSwapValu
 }
 
 
-int randomNumber;
+
 //Random number generator
 void randomNum(int minimum, int maximum, int& firstSwapValue, int& secondSwapValue) {
+    int randomNumber;
     swapNum (minimum, maximum, firstSwapValue, secondSwapValue);
     srand(time(0));
     randomNumber = rand() % (maximum - minimum) + minimum;
