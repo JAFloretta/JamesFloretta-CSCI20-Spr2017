@@ -29,9 +29,7 @@ class TemperatureConverter {
         double GetTempFromKelvin();
         
         void PrintTemperatures(){
-            GetTempFromKelvin();
-            GetTempFromFahrenheit();
-            GetTempFromCelsius();
+            
         }
         
     private:
