@@ -1,6 +1,6 @@
 /* James Floretta
    Date: 3/22/2017
-   About: 
+   About: Determines the best data plan for a consumer based on how many dumb phones, smart phones and tablet phones they own.
 */
 
 #include <string>
