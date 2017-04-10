@@ -1,6 +1,8 @@
 /*James Floretta
-  Date: 4/5/2017
-  About: Rock, paper, scissors, lizards, spock game.
+  Date: 4/10/2017
+  About: Rock, paper, scissors, lizards, spock game. Human vs computer. User enters 1 for rock, 2 for paper, 3 for scissors, 4 for lizard and 5 for spock. The computer generates a number between
+    1 and 5. Rock beats lizard and scissors, paper beats spock and rock, scissors beats paper and lizard, lizard beats spock and paper, spock beats scissors and rock. 
+  Notes: Score function not working
  */
 
 
@@ -93,11 +95,7 @@ int GetRounds() {
 
 //User input
 int GetUser() {
-    
-    
-    
     bool isValid = false;
-    
     
     while (!isValid) {
     
@@ -135,6 +133,7 @@ int GetUser() {
 }
 }
  
+ //Score function
 int GetScore() {
     int compScore = 0;
     int humanScore = 0;
@@ -173,7 +172,7 @@ int GetScore() {
 int main() {
     GetRounds();
     
-    for (int i = 1; i <= rounds; i++) {
+    for (int i = 1; i <= rounds; i++) { //Loop the number of rounds
     ComputersChoice A;
     srand(time(NULL));
     GetUser();
