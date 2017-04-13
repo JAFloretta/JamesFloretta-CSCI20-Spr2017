@@ -11,9 +11,7 @@
 #include <iostream>
 using namespace std;
 
-int rounds = 0;
-int value = 0;
-int user_choice = 0;
+
 
 
 class ComputersChoice { //Class that contains the random number function for the AI player
@@ -22,166 +20,204 @@ class ComputersChoice { //Class that contains the random number function for the
         
     public:
         
-        ComputersChoice() {
-            randNum = value();
-        }
-        int GetChoice() {
-            return randNum;
-        }
-        int value() {
-            randNum = rand() % 5 + 1;
-            return randNum;
-        }
-        
-        
-        void printResult() {
-        if (randNum == 1) {
-            cout <<"The computer chose rock. ";
-        }
-        
-        else if (randNum == 2) {
-            cout<<"The computer chose paper. ";
-        }
-        
-        else if (randNum == 3) {
-            cout<<"The computer chose scissors. ";
-        }
-        
-        else if (randNum == 4) {
-            cout<<"The computer chose lizard. ";
-        }    
-        
-        else {
-            cout<<"The computer chose spock. ";
-        }    
-            
-            
-        }       
+       void SetComputersChoice(int randomNumber);
+       int GetComputersChoice();
+          
 };
-
-
-
-
-
-//How many rounds does the user want to play function
-int GetRounds() {  
-    
-    bool isValid = false;
-    
-    
-    while (!isValid) {
-    
-    cout<<"Do you want to play 3, 5 or 7 rounds?" << endl;
-    cin>>rounds;
-    
-    switch(rounds) {
-        case 3:
-        case 5: 
-        case 7:
-           isValid = true;
-           break;
-        default:
-            cout<<"Invalid input. Enter 3, 5 or 7."<<endl;
-            break;
-
+ void ComputersChoice::SetComputersChoice(int randomNumber) {
+     int randNum = randomNumber;
+ }
+int ComputersChoice::GetComputersChoice() {
+    srand(time(NULL));
+    return randNum = (rand() % 5) + 1;
 }
-  
-}
-           
-    cout<<"You picked the best of " << rounds << " rounds." << endl;
-        return rounds;
 
-}    
 
-//User input
-int GetUser() {
-    bool isValid = false;
-    
-    while (!isValid) {
-    
-    cout<<"Enter 1 for rock, 2 for paper, 3 for scissors, 4 for lizard, 5 for spock." << endl;
-    cin>>user_choice;
-    
-    switch(user_choice) {
-        case 1:
-            isValid = true;
-            cout<<"You chose rock. ";
-            break;
-        case 2: 
-            isValid = true;
-            cout<<"You chose paper. ";
-            break;
-        case 3:
-            isValid = true;
-            cout<<"You chose scissors. ";
-            break;
-           break;
-        case 4:
-            isValid = true;
-            cout<<"You chose lizard. ";
-            break;
-        case 5:
-            isValid = true;
-            cout<<"You chose spock. ";
-            break;
-        default:
-            cout<<"Invalid input."<<endl;
-            break;
 
-        
-    }
-}
-}
- 
- //Score function
-int GetScore() {
-    int compScore = 0;
-    int humanScore = 0;
-    int tie = 0;
-    
-    if (user_choice == value) {
-        tie++;
-    }
-    
-    else if (user_choice == 1 && value == 2 || value == 5) {
-        humanScore++;
-     }
-    
-    else if (user_choice == 2 && value == 1 || value == 5) {
-        humanScore++;
-    }
-    
-    else if (user_choice == 3 && value == 2 || value == 4) {
-        humanScore++;
-    }
-    
-    else if (user_choice == 4 && value == 5 || value == 2) {
-        humanScore++;
-    }
-    
-    else if (user_choice == 5 && value == 3 || value == 1) {
-        humanScore++;
-    }
-    
-    else {
-        compScore++;
-    }
-        cout<<"Human score: " << humanScore << " Computer score: " << compScore << " Ties: " << tie << endl;
-} 
+
+
  
 int main() {
-    GetRounds();
+    ComputersChoice RandomNum;
     
-    for (int i = 1; i <= rounds; i++) { //Loop the number of rounds
-    ComputersChoice A;
-    srand(time(NULL));
-    GetUser();
-    A.printResult();
+    int the_Number = RandomNum.GetComputersChoice();
+    int playersChoice;
+    int humanScore = 0;
+    int compScore = 0;
+    int numOfGames = 0;
+    double gamesPlayed = 1;
     
-    cout<<"This was round " << i << "." << " On to round " << i + 1 << "." << endl;
+    cout<<"How many rounds do you want to play?";
+    cin>>numOfGames;
     
-   
+    while (playersChoice <= 5 && the_Number <= 5 && gamesPlayed <= numOfGames) {
+        the_Number = RandomNum.GetComputersChoice();
+        
+        cout<<"Enter 1 for rock, 2 for paper, 3 for scissors, 4 for lizard, 5 for spock." << endl;
+        cin>>playersChoice;
+        
+        switch(playersChoice) {
+            case 1:
+                cout<<"You chose rock" << endl;
+            break;
+            case 2:
+                cout<<"You chose paper" << endl;
+            break;
+            case 3:
+                cout<<"You chose scissors" << endl;
+            break;
+            case 4:
+                cout<<"You chose lizard" << endl;
+            break;
+            case 5:
+                cout<<"You chose spock" << endl;
+            break;
+            default:
+                cout<<"Enter a valid value" << endl;
+            break;
+        }
+        
+        switch(the_Number) {
+            case 1:
+                cout<<"The computer chose rock" << endl;
+            break;
+            case 2:
+                cout<<"The computer chose paper" << endl;
+            break;
+            case 3:
+                cout<<"The computer chose scissors" << endl;
+            break;
+            case 4:
+                cout<<"The computer chose lizard" << endl;
+            break;
+            case 5:
+                cout<<"The computer chose spock" << endl;
+            break;
+            default:
+                cout<<"Enter valid value" << endl;
+            break;
+        }
+        
+        if (playersChoice == 1) {
+            if (the_Number == 1) {
+                cout<<"Tie" << endl;
+            }
+            if (the_Number == 2) {
+                cout<<"You lose" << endl;
+                compScore++;
+            }
+            if (the_Number == 3) {
+                cout<<"You win" << endl;
+                humanScore++;
+            }
+            if (the_Number == 4) {
+                cout<<"You win" << endl;
+                humanScore++;
+            }
+            if (the_Number == 5) {
+                cout<<"You lose" << endl;
+                compScore++;
+            }
+       
+      }
+        if (playersChoice == 2) {
+            if (the_Number == 1) {
+                cout<<"You win" << endl;
+                humanScore++;
+            }
+            if (the_Number == 2) {
+                cout<<"Tie" << endl;
+                
+            }
+            if (the_Number == 3) {
+                cout<<"You lose" << endl;
+                compScore++;
+            }
+            if (the_Number == 4) {
+                cout<<"You lose" << endl;
+                compScore++;
+            }
+            if (the_Number == 5) {
+                cout<<"You win" << endl;
+                humanScore++;
+            }
+        }
+        if (playersChoice == 3) {
+            if (the_Number == 1) {
+                cout<<"You lose" << endl;
+                compScore++;
+            }
+            if (the_Number == 2) {
+                cout<<"You win" << endl;
+                humanScore++;
+            }
+            if (the_Number == 3) {
+                cout<<"Tie" << endl;
+                
+            }
+            if (the_Number == 4) {
+                cout<<"You win" << endl;
+                humanScore++;
+            }
+            if (the_Number == 5) {
+                cout<<"You win" << endl;
+                humanScore++;
+            }
+        }
+        if (playersChoice == 4) {
+            if (the_Number == 1) {
+                cout<<"You lose" << endl;
+                compScore++;
+            }
+            if (the_Number == 2) {
+                cout<<"You win" << endl;
+                humanScore++;
+            }
+            if (the_Number == 3) {
+                cout<<"You lose" << endl;
+                compScore++;
+            }
+            if (the_Number == 4) {
+                cout<<"Tie" << endl;
+               
+            }
+            if (the_Number == 5) {
+                cout<<"You win" << endl;
+                humanScore++;
+            }
+        }
+           if (playersChoice == 5) {
+            if (the_Number == 1) {
+                cout<<"You win" << endl;
+                humanScore++;
+            }
+            if (the_Number == 2) {
+                cout<<"You lose" << endl;
+                compScore++;
+            }
+            if (the_Number == 3) {
+                cout<<"You win" << endl;
+                humanScore++;
+            }
+            if (the_Number == 4) {
+                cout<<"You lose" << endl;
+                compScore++;
+            }
+            if (the_Number == 5) {
+                cout<<"Tie" << endl;
+            }
+            } 
+           gamesPlayed = gamesPlayed + 1; 
+        }
+    
+    if (compScore > humanScore) {
+        cout<<"Final: You lose" << endl;
+    }
+    else if (compScore < humanScore) {
+        cout<<"Final: You win" << endl;
+    }
+    else {
+        cout<<"Final: tie" << endl;
+    }
 }
-   GetScore();
-    
-}
+        
