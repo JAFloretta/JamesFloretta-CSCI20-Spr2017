@@ -1,9 +1,8 @@
 /*James Floretta
-  Date: 4/10/2017
+  Date: 4/13/2017
   About: Rock, paper, scissors, lizards, spock game. Human vs computer. User enters 1 for rock, 2 for paper, 3 for scissors, 4 for lizard and 5 for spock. The computer generates a number between
     1 and 5. Rock beats lizard and scissors, paper beats spock and rock, scissors beats paper and lizard, lizard beats spock and paper, spock beats scissors and rock. 
-  Notes: Score function not working
- */
+*/
 
 
 
@@ -38,9 +37,9 @@ int ComputersChoice::GetComputersChoice() {
 
  
 int main() {
-    ComputersChoice RandomNum;
+    ComputersChoice RandomNum; //Object
     
-    int the_Number = RandomNum.GetComputersChoice();
+    int the_Number = RandomNum.GetComputersChoice(); //The number equals the randomly generated number
     int playersChoice;
     int humanScore = 0;
     int compScore = 0;
@@ -50,8 +49,8 @@ int main() {
     cout<<"How many rounds do you want to play?";
     cin>>numOfGames;
     
-    while (playersChoice <= 5 && the_Number <= 5 && gamesPlayed <= numOfGames) {
-        the_Number = RandomNum.GetComputersChoice();
+    while (playersChoice <= 5 && the_Number <= 5 && gamesPlayed <= numOfGames) { //user must enter a valid value
+        the_Number = RandomNum.GetComputersChoice(); //Calling the random number
         
         cout<<"Enter 1 for rock, 2 for paper, 3 for scissors, 4 for lizard, 5 for spock." << endl;
         cin>>playersChoice;
@@ -98,6 +97,7 @@ int main() {
             break;
         }
         
+        // A bunch of comparisons between choices
         if (playersChoice == 1) {
             if (the_Number == 1) {
                 cout<<"Tie" << endl;
