@@ -1,6 +1,6 @@
 /* James Floretta
     4/13/2017
-    About:
+    About: A shopping cart that uses a parallel array to keep track of items and it's corresponding price.
 */
 
 
@@ -33,7 +33,7 @@ int main() {
     cin>>choice;
     
    
-    for (int i = 0; i < price[elements]; i++) {
+    for (int i = 0; i < price[elements]; i++) { // how does this work
         
         
         if (choice == "computer") {
