@@ -1,6 +1,7 @@
 /* James Floretta
    Date: 4/18/2017
-   About:
+   About: A shopping cart that keeps track of total price, inventory and price of items. The class 
+   keeps track of the items, price and quantity.
 
 */
 #include <vector>
