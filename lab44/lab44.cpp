@@ -1,6 +1,6 @@
 /* James Floretta
     4/20/2017
-    About:
+    About: User enters first name (10 chars max) and last name (20 chars max). The system outputs potential usernames.
 */
 
 #include <cctype>
@@ -16,11 +16,7 @@ using namespace std;
 int main() {
     char f_name[10]; // first name
     char l_name[20]; // last name
-    int i = 0;
    
-    
-    
-    
     // First name input
     cout<<"What is your first name? Max of 10 alphabetic characters." << endl;
     cin>>f_name;
