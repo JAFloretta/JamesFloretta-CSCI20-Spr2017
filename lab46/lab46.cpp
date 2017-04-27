@@ -19,26 +19,31 @@ using namespace std;
 int main() {
     ofstream outFS;
     ifstream inFS;
-    string inputFilename;
-    string outputFilename;
+    string line;
     
    
-    cout<<"Enter file name: " << endl;
-    cin>>inputFilename;
+    cout<<"Enter file name you wish to open: " << endl;
+    cin>>line;
     
     // Opens file
-    inFS.open(inputFilename);
+    inFS.open(line);
+    outFS.open("transcript.html");
     
     // Check to see if file is in directory
     if (!inFS.is_open()) {
-        cout<<"Could not open file " << inputFilename << endl;
+        cout<<"Could not open file " << line << ". Try again: " << endl;
+        cin>>line;
         return 1;
     }
+        if (inFS.is_open() && outFS.is_open()) {
+            while (getline(inFS, line)) {
+                outFS<<line<<endl;
+            }
+           
+        }
     
-    // Reads each line of the file
-    while (getline(inFS, inputFilename)) {
-        cout<<inputFilename;
-    }
-    inFS.close();
     
+ 
+     inFS.close();
+     outFS.close();
 }
