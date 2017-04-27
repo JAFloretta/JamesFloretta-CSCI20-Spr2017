@@ -17,8 +17,8 @@ using namespace std;
 
 
 int main() {
-    ofstream outFS;
-    ifstream inFS;
+    ofstream outFS; // Writes to a file
+    ifstream inFS; // Takes from a file
     string line;
     
    
@@ -33,8 +33,10 @@ int main() {
     if (!inFS.is_open()) {
         cout<<"Could not open file " << line << ". Try again: " << endl;
         cin>>line;
-        return 1;
+        inFS.open(line);
+        
     }
+        // Copies lines from student.txt to transcript.html
         if (inFS.is_open() && outFS.is_open()) {
             while (getline(inFS, line)) {
                 outFS<<line<<endl;
