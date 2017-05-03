@@ -36,10 +36,10 @@ int main() {
         inFS.open(line);
         
     }
-        // Copies lines from student.txt to transcript.html
-        if (inFS.is_open() && outFS.is_open()) {
-            while (getline(inFS, line)) {
-                outFS<<line<<endl;
+    // Copies lines from student.txt to transcript.html
+    if (inFS.is_open() && outFS.is_open()) {
+        while (getline(inFS, line)) {
+            outFS<<line<<endl;
             }
            
         }
@@ -48,4 +48,7 @@ int main() {
  
      inFS.close();
      outFS.close();
+     
+     
+
 }
