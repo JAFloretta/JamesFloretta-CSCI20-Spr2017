@@ -1,6 +1,8 @@
 /* James Floretta
    Date: 5/04/2017
-   
+   Palindrome program. Enter a name less than 10 characters and displays the first letter, the name you entered, 
+   and the reverses the order of letter in your time minus the first letter.
+   Lets you know if your name is a palindrome.
 */
 
 
