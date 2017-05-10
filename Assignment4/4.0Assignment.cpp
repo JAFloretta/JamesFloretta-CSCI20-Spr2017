@@ -10,63 +10,20 @@
 #include <iostream>
 using namespace std;
 
-
-class TestScorer {
-    private:
-        string key;
-       
-    public:
-        TestScorer(string k); // default constructor
-        
-        int calculateScore(string testAnswers);
-};
-
-TestScorer::TestScorer(string k) {
    
- key = k;
-}
 
-int TestScorer::calculateScore(string testAnswers) {
-    int rightAnswers = 0;
-    int wrongAnswers = 0;
-    
-    for (int i = 0; i < key.size(); i = i + 2) {
-        if (key.at(i) == testAnswers.at(i)) {
-            rightAnswers++;
-        }
-        
-        else {
-            wrongAnswers =  wrongAnswers * 0;
-        }
-        
-    }
-    
-    return rightAnswers;
-    
-}
 
-string fileToString() {
-    ifstream inStudentAnswers("studentanswers.txt");
-    ifstream inAnswerKey("answerkey.txt");
-    ofstream outStudentResults("studentresults.txt");
-    
-    string name;
-    string answers;
-    
-    
-    if (!inStudentAnswers.is_open() || !inAnswerKey.is_open() || !outStudentResults.is_open()) {
-        cout<<"One or more files did not open." << endl;
-    }
-    
-    
 
 
 
 int main() {
-  
-   /* Test GradeIt; // Object 
-    
-   
+    //string name[12];
+    string answers[126];
+    string line; //temp
+    string line2; //temp
+    int i = 0; // Stores names
+    int  j = 0; // Stores answers
+    int n = 0;
     
     ifstream inAnswerKey;
     ifstream inStudentAnswers;
@@ -82,13 +39,27 @@ int main() {
         return 0;
     }
     
-     
-       
+    // Negates the first and last name. Preparing for answer comparisons
+    if (inStudentAnswers.good()) {
+        string name[23];   
+        
+        for (i = 0; i < 23; i++) {
+            inStudentAnswers >> name[i];
+        }
+       cout<<name[i];
+    }
+      
+   
+    
+    
+    
+    
+    
     
     
     
     inAnswerKey.close();
     inStudentAnswers.close();
     outStudentResults.close();
-    */
+    
 } // end main
