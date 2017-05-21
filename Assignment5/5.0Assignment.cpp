@@ -100,7 +100,7 @@ void GradeTest::GetTestQuestions() {
     if(not finT.is_open())
     {
     	// Print error message and return from function.
-    	cerr << "Error: \"could not open testquestions.txt\"\n";
+    	cout << "Error: \"could not open testquestions.txt\"\n";
     	return;
     }
     
